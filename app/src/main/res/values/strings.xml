@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyGallery</string>
+    <string name="gallery_screen_header">Albums:</string>
 </resources>

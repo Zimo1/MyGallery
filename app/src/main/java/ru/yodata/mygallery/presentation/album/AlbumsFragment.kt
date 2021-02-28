@@ -6,16 +6,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import ru.yodata.mygallery.R
 import ru.yodata.mygallery.databinding.FragmentAlbumsBinding
 import ru.yodata.mygallery.domain.model.Album
 import ru.yodata.mygallery.presentation.gallery.OnGalleryCallback
-import java.util.Observer
+import androidx.lifecycle.Observer
+import dagger.hilt.android.AndroidEntryPoint
 
-class AlbumsFragment : Fragment() {
-
+@AndroidEntryPoint
+class AlbumsFragment : Fragment(), OnAlbumsAdapterListener {
 
     private lateinit var fragmentAlbumsBinding: FragmentAlbumsBinding
     private var adapter: AlbumsAdapter? = null

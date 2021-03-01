@@ -7,9 +7,12 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.ViewCompat
+import dagger.hilt.android.AndroidEntryPoint
 import ru.yodata.mygallery.R
 import ru.yodata.mygallery.domain.model.Album
+import ru.yodata.mygallery.presentation.album.AlbumsFragment
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), OnGalleryCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,20 +33,20 @@ class MainActivity : AppCompatActivity(), OnGalleryCallback {
     }
 
     override fun navigateToAlbumPage(album: Album) {
-        supportFragmentManager.beginTransaction()
+        /*supportFragmentManager.beginTransaction()
                 .replace(
                         R.id.gallery_container,
                         PhotosFragment.newInstance(album.id),
                         PhotosFragment.FRAGMENT_NAME
                 )
                 .addToBackStack(PhotosFragment.FRAGMENT_NAME)
-                .commitAllowingStateLoss()
+                .commitAllowingStateLoss()*/
     }
 
 
     override fun gotoDetailPageByPhotoId(imageView: ImageView, id: Long) {
 
-        val intent = Intent(this, PhotoDetailActivity::class.java)
+        /*val intent = Intent(this, PhotoDetailActivity::class.java)
         val bundle = Bundle().apply {
             putLong(KEY_PHOTO_ID, id)
         }
@@ -57,7 +60,7 @@ class MainActivity : AppCompatActivity(), OnGalleryCallback {
             startActivity(intent, options.toBundle())
         } else {
             startActivity(intent)
-        }
+        }*/
     }
 
 
